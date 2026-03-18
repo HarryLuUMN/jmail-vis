@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jmail D3 Demo: Compare Mode</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">Jmail D3 Demo 05</p>
+        <h1>Compare Mode</h1>
+        <p class="lede">
+          Put two participants side by side and compare who they talk to, and
+          when they spike.
+        </p>
+      </header>
+
+      <section class="toolbar panel">
+        <label>
+          Left profile
+          <select id="left-select"></select>
+        </label>
+        <label>
+          Right profile
+          <select id="right-select"></select>
+        </label>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Monthly Activity Comparison</h2>
+          <p>Two timelines share the same axis so spikes line up directly.</p>
+        </div>
+        <div id="timeline"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Top Correspondents</h2>
+          <p>A mirrored bar chart makes the overlap and asymmetry obvious.</p>
+        </div>
+        <div id="mirror"></div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
