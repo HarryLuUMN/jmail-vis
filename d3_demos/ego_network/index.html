@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jmail D3 Demo: Ego Network</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">Jmail D3 Demo 03</p>
+        <h1>Ego Network Drilldown</h1>
+        <p class="lede">
+          Pick one participant and collapse the broader archive into first-hop and
+          second-hop relationship rings.
+        </p>
+      </header>
+
+      <section class="shell">
+        <aside class="side-panel">
+          <h2>Select a Focus Contact</h2>
+          <div id="contact-buttons" class="contact-buttons"></div>
+          <div class="summary">
+            <span class="label">Current focus</span>
+            <strong id="focus-name">jeevacation@gmail.com</strong>
+          </div>
+          <div class="summary">
+            <span class="label">Strongest tie</span>
+            <strong id="strongest-tie">lesley groff</strong>
+          </div>
+          <div class="summary">
+            <span class="label">Ring counts</span>
+            <strong id="ring-counts">1 hop: 0 • 2 hops: 0</strong>
+          </div>
+        </aside>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Relationship Rings</h2>
+            <p>The center node stays pinned while the subgraph re-arranges.</p>
+          </div>
+          <div id="network"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Connection Table</h2>
+            <p>Ordered by communication volume from the selected ego node.</p>
+          </div>
+          <div id="table" class="table"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

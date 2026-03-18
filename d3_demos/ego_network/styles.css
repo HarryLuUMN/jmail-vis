@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Instrument Sans", "Segoe UI", sans-serif;
+  color: #18222c;
+  background:
+    radial-gradient(circle at 0% 20%, rgba(255, 209, 102, 0.2), transparent 32%),
+    radial-gradient(circle at 100% 0%, rgba(88, 145, 255, 0.18), transparent 26%),
+    linear-gradient(180deg, #f7f8fb 0%, #eceff6 100%);
+}
+
+.page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 36px 24px 60px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #5c6784;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 0.96;
+  margin-bottom: 12px;
+}
+
+.lede {
+  max-width: 760px;
+  color: #556372;
+}
+
+.shell {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr) 320px;
+  gap: 22px;
+}
+
+.panel,
+.side-panel {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(24, 34, 44, 0.08);
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: 0 16px 36px rgba(24, 34, 44, 0.08);
+}
+
+.contact-buttons {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 22px;
+}
+
+.contact-buttons button {
+  border: none;
+  border-radius: 14px;
+  padding: 11px 12px;
+  text-align: left;
+  background: #eef2fb;
+  color: #243240;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.contact-buttons button.active {
+  background: #3d5a80;
+  color: #fff;
+}
+
+.summary + .summary {
+  margin-top: 18px;
+}
+
+.label {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #6a7788;
+  margin-bottom: 6px;
+}
+
+.panel-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.panel-header p {
+  color: #617182;
+}
+
+#network {
+  min-height: 540px;
+}
+
+.table {
+  display: grid;
+  gap: 12px;
+}
+
+.row {
+  border: 1px solid rgba(24, 34, 44, 0.08);
+  border-radius: 16px;
+  padding: 12px 14px;
+  background: #fff;
+}
+
+.row strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.row p {
+  font-size: 0.92rem;
+  color: #5d6c7b;
+}
+
+.link {
+  stroke: rgba(61, 90, 128, 0.24);
+}
+
+.node {
+  stroke: #fff;
+  stroke-width: 2px;
+}
+
+@media (max-width: 1100px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
