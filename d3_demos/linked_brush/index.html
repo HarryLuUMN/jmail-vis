@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jmail D3 Demo: Linked Brush</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">Jmail D3 Demo 01</p>
+        <h1>Linked Brush Exploration</h1>
+        <p class="lede">
+          Brush the timeline to filter a communication network and thread list in
+          one move.
+        </p>
+      </header>
+
+      <section class="controls">
+        <div>
+          <span class="label">Selected Range</span>
+          <strong id="range-label">All months</strong>
+        </div>
+        <button id="reset-brush" type="button">Reset Brush</button>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Monthly Volume</h2>
+          <p>Drag across the bars to focus the rest of the page.</p>
+        </div>
+        <div id="timeline"></div>
+      </section>
+
+      <section class="grid">
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Filtered Contact Network</h2>
+            <p>Edge thickness reflects the number of emails in the current window.</p>
+          </div>
+          <div id="network"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Threads In Range</h2>
+            <p>Sorted by message count after the timeline filter is applied.</p>
+          </div>
+          <div id="thread-list" class="thread-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

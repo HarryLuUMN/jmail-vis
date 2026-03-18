@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(255, 214, 165, 0.35), transparent 28%),
+    linear-gradient(180deg, #f8f5ef 0%, #efe9dc 100%);
+  color: #1f2933;
+}
+
+.page {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+}
+
+.hero {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 12px;
+  color: #7c5c2e;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 0.95;
+  margin-bottom: 14px;
+}
+
+.lede {
+  max-width: 680px;
+  font-size: 1.05rem;
+  color: #425466;
+}
+
+.controls,
+.panel {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(31, 41, 51, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(58, 48, 26, 0.08);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  margin-bottom: 24px;
+}
+
+.label {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #7d8893;
+  margin-bottom: 6px;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  background: #b5532f;
+  color: #fff;
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.panel {
+  padding: 20px;
+}
+
+.panel-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.panel-header p {
+  color: #66788a;
+  font-size: 0.95rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+#timeline,
+#network {
+  min-height: 300px;
+}
+
+.thread-list {
+  display: grid;
+  gap: 12px;
+  max-height: 480px;
+  overflow-y: auto;
+}
+
+.thread-card {
+  border: 1px solid rgba(31, 41, 51, 0.08);
+  border-radius: 16px;
+  padding: 14px 16px;
+  background: #fffdf8;
+}
+
+.thread-card strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.thread-meta {
+  font-size: 0.9rem;
+  color: #617080;
+}
+
+.axis text,
+.axis line,
+.axis path {
+  color: #6a7682;
+}
+
+.bar {
+  fill: #2a6f97;
+}
+
+.bar.inactive {
+  fill: #c7d7e3;
+}
+
+.node {
+  stroke: #fff;
+  stroke-width: 2px;
+}
+
+.link {
+  stroke: rgba(66, 84, 102, 0.32);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
