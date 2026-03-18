@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jmail D3 Demo: Search Highlight</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">Jmail D3 Demo 02</p>
+        <h1>Search To Highlight</h1>
+        <p class="lede">
+          Search one participant and the whole exploration surface reacts around
+          that person.
+        </p>
+      </header>
+
+      <section class="toolbar">
+        <label class="search-shell">
+          <span>Search contact</span>
+          <input id="search-input" type="search" placeholder="Try lesley, jeevacation, boris..." />
+        </label>
+        <div class="legend">
+          <span><i class="dot match"></i>Match</span>
+          <span><i class="dot context"></i>Context</span>
+        </div>
+      </section>
+
+      <section class="layout">
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Conversation Activity</h2>
+            <p>Bars with matching participants stay saturated.</p>
+          </div>
+          <div id="histogram"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Contact Network</h2>
+            <p>Matches and their first-order neighbors become the focal layer.</p>
+          </div>
+          <div id="network"></div>
+        </section>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Matching Threads</h2>
+          <p>Subjects and participants that contain the current query.</p>
+        </div>
+        <div id="results" class="results"></div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
