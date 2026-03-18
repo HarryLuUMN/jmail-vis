@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "General Sans", "Segoe UI", sans-serif;
+  color: #16202a;
+  background:
+    radial-gradient(circle at 0% 20%, rgba(255, 183, 77, 0.2), transparent 30%),
+    radial-gradient(circle at 100% 0%, rgba(217, 4, 41, 0.12), transparent 24%),
+    linear-gradient(180deg, #fcfaf7 0%, #f2eee7 100%);
+}
+
+.page {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 36px 24px 60px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #7c6d5a;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 0.95;
+  margin-bottom: 12px;
+}
+
+.lede {
+  max-width: 760px;
+  color: #5f695f;
+}
+
+.workspace {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 22px;
+}
+
+.panel {
+  margin-top: 24px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(22, 32, 42, 0.08);
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: 0 16px 34px rgba(22, 32, 42, 0.08);
+}
+
+.workspace .panel {
+  margin-top: 0;
+}
+
+.filter-panel {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.filter-panel label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.count-box {
+  margin-top: 10px;
+  border-radius: 18px;
+  padding: 16px;
+  background: #fff6e8;
+}
+
+.label {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7c6d5a;
+  margin-bottom: 6px;
+}
+
+.panel-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.panel-header p {
+  color: #69767f;
+}
+
+#scatter {
+  min-height: 360px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  border-radius: 18px;
+  border: 1px solid rgba(22, 32, 42, 0.08);
+  background: #fff;
+  padding: 14px;
+}
+
+.card strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #61707e;
+  font-size: 0.95rem;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.badges span {
+  border-radius: 999px;
+  background: #fff3cd;
+  color: #7c5c00;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.point {
+  fill: rgba(42, 111, 151, 0.8);
+  stroke: #fff;
+  stroke-width: 2px;
+}
+
+@media (max-width: 920px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

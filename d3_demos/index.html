@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jmail D3 Demos</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        color: #16202a;
+        background:
+          radial-gradient(circle at 10% 0%, rgba(42, 111, 151, 0.18), transparent 26%),
+          radial-gradient(circle at 100% 10%, rgba(231, 111, 81, 0.16), transparent 24%),
+          linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%);
+      }
+      main {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 40px 24px 64px;
+      }
+      h1, h2, p { margin: 0; }
+      h1 {
+        font-size: clamp(2.6rem, 6vw, 4.6rem);
+        line-height: 0.95;
+        margin-bottom: 14px;
+      }
+      .lede {
+        max-width: 760px;
+        color: #556270;
+        margin-bottom: 28px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 18px;
+      }
+      a.card {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        background: rgba(255, 255, 255, 0.86);
+        border: 1px solid rgba(22, 32, 42, 0.08);
+        border-radius: 20px;
+        padding: 18px;
+        box-shadow: 0 14px 32px rgba(22, 32, 42, 0.08);
+      }
+      a.card span {
+        display: block;
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #64748b;
+        margin-bottom: 10px;
+      }
+      a.card h2 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+      }
+      a.card p {
+        color: #5f6d7a;
+        line-height: 1.45;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Jmail Interactive D3 Demos</h1>
+      <p class="lede">
+        Six independent exploration demos, each focused on one investigative
+        interaction pattern for the Jmail dataset.
+      </p>
+      <section class="grid">
+        <a class="card" href="./linked_brush/index.html">
+          <span>Demo 01</span>
+          <h2>Linked Brush</h2>
+          <p>Brush the timeline and see the network plus thread list update together.</p>
+        </a>
+        <a class="card" href="./search_highlight/index.html">
+          <span>Demo 02</span>
+          <h2>Search Highlight</h2>
+          <p>Type a participant name and highlight matches across multiple coordinated views.</p>
+        </a>
+        <a class="card" href="./ego_network/index.html">
+          <span>Demo 03</span>
+          <h2>Ego Network</h2>
+          <p>Collapse the larger graph down to first-hop and second-hop contact rings.</p>
+        </a>
+        <a class="card" href="./thread_replay/index.html">
+          <span>Demo 04</span>
+          <h2>Thread Replay</h2>
+          <p>Replay a conversation sequence along a shared timeline and message stack.</p>
+        </a>
+        <a class="card" href="./compare_mode/index.html">
+          <span>Demo 05</span>
+          <h2>Compare Mode</h2>
+          <p>Compare two profiles with synchronized timelines and mirrored correspondents.</p>
+        </a>
+        <a class="card" href="./pattern_filters/index.html">
+          <span>Demo 06</span>
+          <h2>Pattern Filters</h2>
+          <p>Stack investigative rules to isolate suspicious or unusual communication patterns.</p>
+        </a>
+      </section>
+    </main>
+  </body>
+</html>

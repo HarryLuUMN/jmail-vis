@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jmail D3 Demo: Pattern Filters</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">Jmail D3 Demo 06</p>
+        <h1>Suspicious Pattern Filters</h1>
+        <p class="lede">
+          Stack rule-based filters to narrow a large archive into a short list of
+          threads worth human review.
+        </p>
+      </header>
+
+      <section class="workspace">
+        <aside class="panel filter-panel">
+          <h2>Rules</h2>
+          <label><input type="checkbox" id="night-filter" /> Late-night activity</label>
+          <label><input type="checkbox" id="burst-filter" /> Sudden burst volume</label>
+          <label><input type="checkbox" id="attachment-filter" /> Heavy attachment usage</label>
+          <label><input type="checkbox" id="multi-filter" /> Broad CC spread</label>
+          <div class="count-box">
+            <span class="label">Visible threads</span>
+            <strong id="visible-count">0</strong>
+          </div>
+        </aside>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Risk Landscape</h2>
+            <p>X = message volume, Y = suspicious score, size = attachments.</p>
+          </div>
+          <div id="scatter"></div>
+        </section>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Flagged Threads</h2>
+          <p>Rule badges explain why each thread survives the current filter stack.</p>
+        </div>
+        <div id="cards" class="cards"></div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
