@@ -3,106 +3,254 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jmail D3 Demos</title>
+    <title>Jmail D3 Demo Showcase</title>
     <style>
-      * { box-sizing: border-box; }
+      * {
+        box-sizing: border-box;
+      }
+
+      :root {
+        --ink: #18222c;
+        --muted: #5f6c79;
+        --line: rgba(24, 34, 44, 0.08);
+        --panel: rgba(255, 255, 255, 0.88);
+        --shadow: 0 18px 40px rgba(24, 34, 44, 0.08);
+        --accent: #c8553d;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
       body {
         margin: 0;
         font-family: "Segoe UI", sans-serif;
-        color: #16202a;
+        color: var(--ink);
         background:
-          radial-gradient(circle at 10% 0%, rgba(42, 111, 151, 0.18), transparent 26%),
-          radial-gradient(circle at 100% 10%, rgba(231, 111, 81, 0.16), transparent 24%),
+          radial-gradient(circle at 0% 0%, rgba(42, 111, 151, 0.16), transparent 24%),
+          radial-gradient(circle at 100% 0%, rgba(231, 111, 81, 0.14), transparent 26%),
           linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%);
       }
-      main {
-        max-width: 1120px;
+
+      .page {
+        max-width: 1380px;
         margin: 0 auto;
-        padding: 40px 24px 64px;
+        padding: 36px 24px 80px;
       }
-      h1, h2, p { margin: 0; }
+
+      .hero {
+        margin-bottom: 24px;
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #607087;
+      }
+
+      h1,
+      h2,
+      p {
+        margin: 0;
+      }
+
       h1 {
-        font-size: clamp(2.6rem, 6vw, 4.6rem);
-        line-height: 0.95;
+        font-size: clamp(2.8rem, 6vw, 5rem);
+        line-height: 0.94;
         margin-bottom: 14px;
       }
+
       .lede {
-        max-width: 760px;
-        color: #556270;
-        margin-bottom: 28px;
+        max-width: 860px;
+        color: var(--muted);
+        font-size: 1.06rem;
       }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 18px;
-      }
-      a.card {
-        display: block;
-        text-decoration: none;
-        color: inherit;
-        background: rgba(255, 255, 255, 0.86);
-        border: 1px solid rgba(22, 32, 42, 0.08);
+
+      .toolbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(10px);
+        background: rgba(248, 250, 252, 0.82);
+        border: 1px solid var(--line);
         border-radius: 20px;
-        padding: 18px;
-        box-shadow: 0 14px 32px rgba(22, 32, 42, 0.08);
+        box-shadow: var(--shadow);
+        margin: 24px 0 28px;
+        padding: 14px;
       }
-      a.card span {
-        display: block;
+
+      .nav {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 10px;
+      }
+
+      .nav a {
+        text-decoration: none;
+        color: var(--ink);
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 12px 14px;
+        font-weight: 600;
+      }
+
+      .stack {
+        display: grid;
+        gap: 28px;
+      }
+
+      .demo {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .demo-copy {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 20px 22px 0;
+      }
+
+      .demo-copy p {
+        color: var(--muted);
+        max-width: 720px;
+      }
+
+      .demo-meta {
         font-size: 12px;
-        letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: #64748b;
-        margin-bottom: 10px;
+        letter-spacing: 0.14em;
+        color: #6b7280;
       }
-      a.card h2 {
-        font-size: 1.2rem;
-        margin-bottom: 8px;
+
+      iframe {
+        display: block;
+        width: 100%;
+        height: 820px;
+        border: none;
+        margin-top: 16px;
+        background: #fff;
       }
-      a.card p {
-        color: #5f6d7a;
-        line-height: 1.45;
+
+      .footer-note {
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 900px) {
+        .demo-copy {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        iframe {
+          height: 920px;
+        }
       }
     </style>
   </head>
   <body>
-    <main>
-      <h1>Jmail Interactive D3 Demos</h1>
-      <p class="lede">
-        Six independent exploration demos, each focused on one investigative
-        interaction pattern for the Jmail dataset.
-      </p>
-      <section class="grid">
-        <a class="card" href="./linked_brush/index.html">
-          <span>Demo 01</span>
-          <h2>Linked Brush</h2>
-          <p>Brush the timeline and see the network plus thread list update together.</p>
-        </a>
-        <a class="card" href="./search_highlight/index.html">
-          <span>Demo 02</span>
-          <h2>Search Highlight</h2>
-          <p>Type a participant name and highlight matches across multiple coordinated views.</p>
-        </a>
-        <a class="card" href="./ego_network/index.html">
-          <span>Demo 03</span>
-          <h2>Ego Network</h2>
-          <p>Collapse the larger graph down to first-hop and second-hop contact rings.</p>
-        </a>
-        <a class="card" href="./thread_replay/index.html">
-          <span>Demo 04</span>
-          <h2>Thread Replay</h2>
-          <p>Replay a conversation sequence along a shared timeline and message stack.</p>
-        </a>
-        <a class="card" href="./compare_mode/index.html">
-          <span>Demo 05</span>
-          <h2>Compare Mode</h2>
-          <p>Compare two profiles with synchronized timelines and mirrored correspondents.</p>
-        </a>
-        <a class="card" href="./pattern_filters/index.html">
-          <span>Demo 06</span>
-          <h2>Pattern Filters</h2>
-          <p>Stack investigative rules to isolate suspicious or unusual communication patterns.</p>
-        </a>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">Jmail Interactive Suite</p>
+        <h1>Six D3 Exploration Demos, One Page</h1>
+        <p class="lede">
+          This single-page showcase embeds all six interaction patterns for
+          exploring the Jmail dataset: linked filtering, search, ego networks,
+          thread replay, compare mode, and suspicious pattern filtering.
+        </p>
+      </header>
+
+      <section class="toolbar">
+        <nav class="nav">
+          <a href="#linked-brush">Linked Brush</a>
+          <a href="#search-highlight">Search Highlight</a>
+          <a href="#ego-network">Ego Network</a>
+          <a href="#thread-replay">Thread Replay</a>
+          <a href="#compare-mode">Compare Mode</a>
+          <a href="#pattern-filters">Pattern Filters</a>
+        </nav>
       </section>
+
+      <section class="stack">
+        <article class="demo" id="linked-brush">
+          <div class="demo-copy">
+            <div>
+              <div class="demo-meta">Demo 01</div>
+              <h2>Linked Brush</h2>
+            </div>
+            <p>Brush the timeline to filter the network and thread list in one coordinated move.</p>
+          </div>
+          <iframe src="./linked_brush/index.html" title="Linked Brush Demo"></iframe>
+        </article>
+
+        <article class="demo" id="search-highlight">
+          <div class="demo-copy">
+            <div>
+              <div class="demo-meta">Demo 02</div>
+              <h2>Search Highlight</h2>
+            </div>
+            <p>Search one contact and highlight their activity across bars, graph nodes, and result cards.</p>
+          </div>
+          <iframe src="./search_highlight/index.html" title="Search Highlight Demo"></iframe>
+        </article>
+
+        <article class="demo" id="ego-network">
+          <div class="demo-copy">
+            <div>
+              <div class="demo-meta">Demo 03</div>
+              <h2>Ego Network</h2>
+            </div>
+            <p>Choose one person and shrink the archive into first-hop and second-hop relationship rings.</p>
+          </div>
+          <iframe src="./ego_network/index.html" title="Ego Network Demo"></iframe>
+        </article>
+
+        <article class="demo" id="thread-replay">
+          <div class="demo-copy">
+            <div>
+              <div class="demo-meta">Demo 04</div>
+              <h2>Thread Replay</h2>
+            </div>
+            <p>Replay a thread over time so the conversation unfolds step by step.</p>
+          </div>
+          <iframe src="./thread_replay/index.html" title="Thread Replay Demo"></iframe>
+        </article>
+
+        <article class="demo" id="compare-mode">
+          <div class="demo-copy">
+            <div>
+              <div class="demo-meta">Demo 05</div>
+              <h2>Compare Mode</h2>
+            </div>
+            <p>Compare two profiles with synchronized timelines and mirrored correspondent bars.</p>
+          </div>
+          <iframe src="./compare_mode/index.html" title="Compare Mode Demo"></iframe>
+        </article>
+
+        <article class="demo" id="pattern-filters">
+          <div class="demo-copy">
+            <div>
+              <div class="demo-meta">Demo 06</div>
+              <h2>Pattern Filters</h2>
+            </div>
+            <p>Stack investigative rules to isolate suspicious threads and review the surviving set.</p>
+          </div>
+          <iframe src="./pattern_filters/index.html" title="Pattern Filters Demo"></iframe>
+        </article>
+      </section>
+
+      <p class="footer-note">
+        Tip: open this page through a local server so all embedded demo assets load cleanly.
+      </p>
     </main>
   </body>
 </html>
