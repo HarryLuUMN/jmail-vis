@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jmail D3 Demo: Thread Replay</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">Jmail D3 Demo 04</p>
+        <h1>Thread Replay</h1>
+        <p class="lede">
+          Switch between threads and replay the sequence of messages along a
+          shared timeline.
+        </p>
+      </header>
+
+      <section class="workspace">
+        <aside class="thread-menu panel">
+          <div class="panel-header">
+            <h2>Threads</h2>
+            <p>Select one sequence to replay.</p>
+          </div>
+          <div id="thread-buttons" class="thread-buttons"></div>
+        </aside>
+
+        <section class="panel main-panel">
+          <div class="panel-header">
+            <div>
+              <h2 id="thread-title">Travel schedules</h2>
+              <p id="thread-subtitle">Press play to animate the thread.</p>
+            </div>
+            <div class="controls">
+              <button id="play-button" type="button">Play Replay</button>
+              <button id="reset-button" type="button" class="ghost">Reset</button>
+            </div>
+          </div>
+          <div id="timeline"></div>
+          <div id="messages" class="messages"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
